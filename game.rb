@@ -14,9 +14,7 @@ class Game
   end
 
   def handle_mouse_move x, y
-    row = (y.to_i - 20) / 100
-    column = (x.to_i - 20) / 100
-    @current_square = get_square(column, row)
+    @current_square = get_square(pixel_to_coord(x), pixel_to_coord(y))
   end
 
   def handle_mouse_down x, y
